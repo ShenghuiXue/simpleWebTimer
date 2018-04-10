@@ -5,6 +5,7 @@
 	<title>Simple timer</title>
 	<link rel="icon" type="image/png" href="./img/bear.png">
 	<link rel="stylesheet" type="text/css" href="./CSS/main.css">
+	<link rel="stylesheet" type="text/css" href="./CSS/timer.css">
 
 	
 
@@ -15,8 +16,11 @@
 	</div>
 
 	<div class="main_container"> 
+		<div class = "left_container">
 		<p> Current Local Time:  </p>
+
 		<div id="txt"></div>
+	</div>
 		<p> Timer: </p>
 		<p> Please setup your time here and then click start/continue</p>
 		<table>
@@ -38,9 +42,8 @@
 
 		</table>
 		<br>
-		<br>
 
-		<table>
+		<table class= "timer_display">
 			<tr>
 				<th> <div class="triangleUp" onclick="hourUp()" ></div></th>
 				<th></th>
@@ -72,7 +75,7 @@
 
 	</div>
 	
-	<div class="foot"> <h4> foot goes here </h4> </div>
+	<div class="foot"> <h4> develpoed by Shenghui Xue (David) </h4> </div>
 	
 </body>
 </html>

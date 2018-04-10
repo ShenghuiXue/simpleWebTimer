@@ -1,0 +1,68 @@
+
+.triangleUp {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+  
+	border-bottom: 20px solid #87bdd8;
+	
+}
+.triangleUp:hover {
+	border-bottom-color: #36486b;
+}
+
+.triangleDown {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+  
+	border-top: 20px solid #b5e7a0;
+	
+}
+.triangleDown:hover {
+	border-top-color:#86af49;
+}
+
+button {
+	border-radius: 5px;
+	background-color: #87CEFA;
+	border-color: #008080;
+	
+}
+
+button:hover {
+	background-color: #1E90FF;
+}
+
+.main_container {
+	height: 500px;
+	background-color:  #E0FFFF;
+	margin: 20px;
+	padding: 20px;
+	font-size: 24px;
+}
+
+.left_container {
+	font-size: 28px;
+	text-align: center;
+	float: left;
+	width: 250px;
+	height: 350px;
+	margin: 30px;
+	background: radial-gradient( #FFFFFF, #ADD8E6) repeat;
+	border-radius: 10px;
+	padding: 50px;
+	margin-right: 80px;
+}
+
+.timer_display {
+	font-size: 70px;
+	align-content: center;
+}
+
+#txt {
+	font-size: 60px;
+
+}
