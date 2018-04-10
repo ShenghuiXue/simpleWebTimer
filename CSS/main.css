@@ -1,0 +1,22 @@
+body {
+	background-color: #c8f1f7;
+	font-family: "Times New Roman", Times, serif;
+}
+
+.header {
+	text-align: center;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+
+
+li.menu_list {
+	display: block;
+	text-align: center;
+	list-style-type: none;
+	float: left;
+	margin: 16px,
+	padding: 16px;
+	border-color: #FF0000;
+	color: #FF0000;
+}

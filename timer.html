@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple timer</title>
+	<link rel="icon" type="image/png" href="./img/bear.png">
+	<link rel="stylesheet" type="text/css" href="./CSS/main.css">
+
+	
+
+</head>
+<body onload="startTime()">
+	<div class="header">
+		<h1> Simple Online Timer</h1>
+	</div>
+
+	<div class="main_container"> 
+		<p> Current Local Time:  </p>
+		<div id="txt"></div>
+		<p> Timer: </p>
+		<p> Please setup your time here and then click start</p>
+		<table>
+			
+		</table>
+
+
+	</div>
+	
+	<div class="foot"> <h4> goot goes here </h4> </div>
+	
+</body>
+</html>
+
+	<script>
+	function startTime() {
+	    var today = new Date();
+	    var h = today.getHours();
+	    var m = today.getMinutes();
+	    var s = today.getSeconds();
+	    h = checkTime(h);
+	    m = checkTime(m);
+	    s = checkTime(s);
+	    document.getElementById('txt').innerHTML =
+	    h + ":" + m + ":" + s;
+	    var t = setTimeout(startTime, 500);
+	}
+	function checkTime(i) {
+	    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+	    return i;
+	}
+	</script>
