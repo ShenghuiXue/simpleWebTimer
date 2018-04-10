@@ -19,4 +19,31 @@ li.menu_list {
 	padding: 16px;
 	border-color: #FF0000;
 	color: #FF0000;
+	
+}
+
+.triangleUp {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+  
+	border-bottom: 20px solid #87bdd8;
+	
+}
+.triangleUp:hover {
+	border-bottom-color: #36486b;
+}
+
+.triangleDown {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+  
+	border-top: 20px solid #b5e7a0;
+	
+}
+.triangleDown:hover {
+	border-top-color:#86af49;
 }

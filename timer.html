@@ -37,11 +37,30 @@
 			
 
 		</table>
-		
+		<br>
+		<br>
 
 		<table>
 			<tr>
-				<td id="hour">00</td><td>: </td><td id= "minutes">04</td><td >: </td><td id="seconds">00</td>
+				<th> <div class="triangleUp" onclick="hourUp()" ></div></th>
+				<th></th>
+				<th> <div class="triangleUp" onclick="minUp()"></div></th>
+				<th></th>
+				<th> <div class="triangleUp" onclick="secUp()"></div></th>
+			</tr>
+			<tr>
+				<td  id="hour">00</td>
+				<td>: </td>
+				<td id= "minutes">04</td>
+				<td >: </td>
+				<td id="seconds">00</td>
+			</tr>
+			<tr>
+				<td> <div class="triangleDown" onclick="hourDown()"></div></td>
+				<td></td>
+				<td> <div class="triangleDown" onclick="minDown()"></div></td>
+				<td></td>
+				<td> <div class="triangleDown" onclick="secDown()"></div></td>
 			</tr>
 		</table>
 		<p>Click the button to start the timmer.</p>
@@ -216,6 +235,62 @@
 			if (x <0) return Math.ceil (x);
 		}
 		
+		//click function to increase or decreae correspding digits of h m s by 1
+		hourUp = function () {
+			TimerRuningControl=0;
+		 	startBottonOn=false;
+			
+			document.getElementById('hour').innerHTML=checkTime(Number(document.getElementById('hour').innerHTML)+1);
+				
+			
+		}
+		minUp = function () {
+			TimerRuningControl=0;
+		 	startBottonOn=false;
+			if(document.getElementById('minutes').innerHTML<59){
+				document.getElementById('minutes').innerHTML=checkTime(Number(document.getElementById('minutes').innerHTML)+1);
+				}
+			
+		}
+		secUp = function () {
+			TimerRuningControl=0;
+		 	startBottonOn=false;
+			if(document.getElementById('seconds').innerHTML<59){
+				document.getElementById('seconds').innerHTML=checkTime(Number(document.getElementById('seconds').innerHTML)+1);
+				}
+			
+		}
+		
+		hourDown = function () {
+			TimerRuningControl=0;
+		 	startBottonOn=false;
+			
+			document.getElementById('hour').innerHTML=Number(document.getElementById('hour').innerHTML)-1;
+				
+			
+		}
+		minDown = function () {
+			TimerRuningControl=0;
+		 	startBottonOn=false;
+			if(document.getElementById('minutes').innerHTML>0){
+				document.getElementById('minutes').innerHTML=checkTime(Number(document.getElementById('minutes').innerHTML)-1);
+				}
+			
+		}
+		secDown = function () {
+			TimerRuningControl=0;
+		 	startBottonOn=false;
+			if(document.getElementById('seconds').innerHTML>0){
+				document.getElementById('seconds').innerHTML=checkTime(Number(document.getElementById('seconds').innerHTML)-1);
+				}
+			
+		}
+		
+		
+		
+		
+		
+
 
 
 	</script>
