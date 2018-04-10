@@ -20,32 +20,129 @@
 		<p> Timer: </p>
 		<p> Please setup your time here and then click start</p>
 		<table>
-			
+			<tr>
+				<td id="hour">00</td><td>: </td><td id= "minutes">01</td><td >: </td><td id="seconds">01</td>
+			</tr>
 		</table>
+		<p>Click the button to start the timmer.</p>
+		<button onclick="startTimerFun(0)">Start</button>
+		<button onclick="startTimerFun(1)">Pause</button>
+		<button onclick="startTimerFun(2)">Reset</button>
+		<p id="test1"> </p>
 
 
 	</div>
 	
-	<div class="foot"> <h4> goot goes here </h4> </div>
+	<div class="foot"> <h4> foot goes here </h4> </div>
 	
 </body>
 </html>
 
 	<script>
-	function startTime() {
-	    var today = new Date();
-	    var h = today.getHours();
-	    var m = today.getMinutes();
-	    var s = today.getSeconds();
-	    h = checkTime(h);
-	    m = checkTime(m);
-	    s = checkTime(s);
-	    document.getElementById('txt').innerHTML =
-	    h + ":" + m + ":" + s;
-	    var t = setTimeout(startTime, 500);
-	}
-	function checkTime(i) {
-	    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-	    return i;
-	}
+		function startTime() {
+		    var today = new Date();
+		    var h = today.getHours();
+		    var m = today.getMinutes();
+		    var s = today.getSeconds();
+		    h = checkTime(h);
+		    m = checkTime(m);
+		    s = checkTime(s);
+		    document.getElementById('txt').innerHTML =
+		    h + ":" + m + ":" + s;
+		    var t = setTimeout(startTime, 500);
+		}
+		function checkTime(i) {
+		    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+		    return i;
+		}
+				//test function
+
+		function test() {
+
+			document.getElementById("test1").innerHTML=timeDisplay(getTotaltime ()-10) ;
+			// document.getElementById("test1").innerHTML=getTotaltime ();
+
+
+		}
+
+		//function to calculate total time and return total time in seconds
+		function getTotaltime () {
+			// get the countDownTime from user setup
+			var displayedMin=Number(document.getElementById('minutes').innerHTML) ;
+			var displayedSec=Number(document.getElementById('seconds').innerHTML) ;
+			var displayedhours=Number(document.getElementById('hour').innerHTML) ;
+			// calulate total time in seconds
+			var totalTimeInSec=60*60*displayedhours+60*displayedMin+displayedSec;
+			return totalTimeInSec;
+		}
+
+		function timeDisplay(totalSec) {
+			if (totalSec >=0) {
+				var sec= totalSec%60;
+				var remainder=Math.floor(totalSec/60);
+				var min=remainder%60;
+				hour=Math.floor (remainder/60);
+				hour = checkTime(hour);
+				min = checkTime(min);
+				sec = checkTime(sec);
+				
+				document.getElementById('minutes').innerHTML=min;
+				document.getElementById('seconds').innerHTML=sec;
+				document.getElementById('hour').innerHTML=hour;
+			} else {
+				totalSec=Math.abs(totalSec);
+				var sec= totalSec%60;
+				var remainder=Math.floor(totalSec/60);
+				var min=remainder%60;
+				hour=Math.floor (remainder/60);
+				hour = checkTime(hour);
+				min = checkTime(min);
+				sec = checkTime(sec);
+				document.getElementById('hour').innerHTML="-"+hour;
+				document.getElementById('minutes').innerHTML=min;
+				document.getElementById('seconds').innerHTML=sec;
+				
+			}
+			
+		}
+		clearTime=function() {
+			document.getElementById('minutes').innerHTML="00";
+			document.getElementById('seconds').innerHTML='00';
+			document.getElementById('hour').innerHTML="00";
+		}
+
+		function countdown () {
+			timeDisplay(getTotaltime ()-1);
+			setTimeout(countdown, 1000);
+		}
+		
+		// when click invoke this function to start timmer
+		 function startTimerFun(x) { 
+		 	switch (x) {
+		 		case 0:
+		 			
+		 				countdown();
+		 						
+		 			
+		 			
+		 			break;
+		 		case 1:
+		 			//
+		 			break;
+		 		case 2:
+		 			//
+		 			clearTime();
+		 			break;
+		 		default:
+		 			// do nothing 
+
+		 	}
+
+
+
+		}
+		
+
+
 	</script>
+	
