@@ -25,9 +25,9 @@
 			</tr>
 
 			<tr>
-				<td><input id="setHour" type="number"  value="00" ></td>
-				<td><input id="setMin" type="number" min="0" max="59" step="1" value="04"></td>
-				<td><input id="setSec" type="number" min="0" max="59" step="1" value="00"></td>
+				<td><input id="setHour" type="number"  min="0" max="59" step="1" pattern="\d+" value="00" ></td>
+				<td><input id="setMin" type="number" min="0" max="59" step="1" pattern="\d+" value="04"></td>
+				<td><input id="setSec" type="number" min="0" max="59" step="1" pattern="\d+" value="00"></td>
 			</tr>
 			<tr>
 				<td><button id="setTimer" onclick="setTimer()"> Setup Timer </button></td>
@@ -186,9 +186,25 @@
 		 	document.getElementById("warning").innerHTML="warning message";
 
 		 	// update each field in the timer
+		 	/*old code
 		 	document.getElementById('minutes').innerHTML=document.getElementById('setMin').value;
 			document.getElementById('seconds').innerHTML=document.getElementById('setSec').value;
 			document.getElementById('hour').innerHTML=document.getElementById("setHour").value;
+			*/
+			var displayedMin=Number(document.getElementById('setMin').value) ;
+			var displayedSec=Number(document.getElementById('setSec').value) ;
+			var displayedhours=Number(document.getElementById("setHour").value) ;
+			// calulate total time in seconds
+			var totalTimeInSec=60*60*Math.abs (displayedhours)+60*displayedMin+displayedSec;
+			
+			if (document.getElementById("setHour").value.charAt(0)==="-") {
+				timeDisplay(totalTimeInSec*-1) ;
+			} else {
+				timeDisplay(totalTimeInSec) ;
+			}
+			
+			
+			
 
 
 		}
