@@ -18,17 +18,37 @@
 		<p> Current Local Time:  </p>
 		<div id="txt"></div>
 		<p> Timer: </p>
-		<p> Please setup your time here and then click start</p>
+		<p> Please setup your time here and then click start/continue</p>
 		<table>
 			<tr>
-				<td id="hour">00</td><td>: </td><td id= "minutes">01</td><td >: </td><td id="seconds">01</td>
+				<th>Hours</th><th>Minutes</th><th>Seconds</th>
+			</tr>
+
+			<tr>
+				<td><input id="setHour" type="number"  value="00" ></td>
+				<td><input id="setMin" type="number" min="0" max="59" step="1" value="04"></td>
+				<td><input id="setSec" type="number" min="0" max="59" step="1" value="00"></td>
+			</tr>
+			<tr>
+				<td><button id="setTimer" onclick="setTimer()"> Setup Timer </button></td>
+				<td id="warning"> </td>
+			</tr>
+			
+			
+
+		</table>
+		
+
+		<table>
+			<tr>
+				<td id="hour">00</td><td>: </td><td id= "minutes">04</td><td >: </td><td id="seconds">00</td>
 			</tr>
 		</table>
 		<p>Click the button to start the timmer.</p>
 		<button onclick="startTimerFun(0)">Start/Continue</button>
 		<button onclick="startTimerFun(1)">Pause</button>
 		<button onclick="startTimerFun(2)">Reset</button>
-		<p id="test1"> </p>
+		
 
 
 	</div>
@@ -136,7 +156,7 @@
 		 			if (!startBottonOn) {
 		 				TimerRuningControl =1;
 		 				startBottonOn=true;
-		 			countDown ();
+		 				countDown ();
 		 			}
 		 			
 		 						
@@ -156,9 +176,19 @@
 		 			break;
 		 		default:
 		 			// do nothing 
-
 		 	}
+		}
 
+		setTimer =function () {
+			// stop timmer
+			TimerRuningControl=0;
+		 	startBottonOn=false;
+		 	document.getElementById("warning").innerHTML="warning message";
+
+		 	// update each field in the timer
+		 	document.getElementById('minutes').innerHTML=document.getElementById('setMin').value;
+			document.getElementById('seconds').innerHTML=document.getElementById('setSec').value;
+			document.getElementById('hour').innerHTML=document.getElementById("setHour").value;
 
 
 		}
