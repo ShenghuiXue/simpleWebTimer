@@ -191,11 +191,12 @@
 			document.getElementById('seconds').innerHTML=document.getElementById('setSec').value;
 			document.getElementById('hour').innerHTML=document.getElementById("setHour").value;
 			*/
-			var displayedMin=Number(document.getElementById('setMin').value) ;
-			var displayedSec=Number(document.getElementById('setSec').value) ;
-			var displayedhours=Number(document.getElementById("setHour").value) ;
+			var displayedMin=Number(document.getElementById('setMin').value);
+			var displayedSec=Number(document.getElementById('setSec').value)  ;
+			var displayedhours=Number(document.getElementById("setHour").value)  ;
 			// calulate total time in seconds
-			var totalTimeInSec=60*60*Math.abs (displayedhours)+60*displayedMin+displayedSec;
+
+			var totalTimeInSec=60*60*Math.abs (decimalToInt(displayedhours))+60* decimalToInt (displayedMin) +decimalToInt (displayedSec);
 			
 			if (document.getElementById("setHour").value.charAt(0)==="-") {
 				timeDisplay(totalTimeInSec*-1) ;
@@ -207,6 +208,12 @@
 			
 
 
+		}
+
+		// convert decimal to int eg. -1.3 is 3
+		decimalToInt = function (x) {
+			if (x >=0) return Math.floor(x);
+			if (x <0) return Math.ceil (x);
 		}
 		
 
