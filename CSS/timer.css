@@ -1,30 +1,4 @@
 
-.triangleUp {
-	width: 0; 
-	height: 0; 
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-  
-	border-bottom: 20px solid #87bdd8;
-	
-}
-.triangleUp:hover {
-	border-bottom-color: #36486b;
-}
-
-.triangleDown {
-	width: 0; 
-	height: 0; 
-	border-left: 10px solid transparent;
-	border-right: 10px solid transparent;
-  
-	border-top: 20px solid #b5e7a0;
-	
-}
-.triangleDown:hover {
-	border-top-color:#86af49;
-}
-
 button {
 	border-radius: 5px;
 	background-color: #87CEFA;
@@ -37,7 +11,7 @@ button:hover {
 }
 
 .main_container {
-	height: 500px;
+
 	background-color:  #E0FFFF;
 	margin: 20px;
 	padding: 20px;
@@ -47,14 +21,14 @@ button:hover {
 .left_container {
 	font-size: 28px;
 	text-align: center;
-	float: left;
+	float: right;
 	width: 250px;
-	height: 350px;
+	height: 320px;
 	margin: 30px;
 	background: radial-gradient( #FFFFFF, #ADD8E6) repeat;
 	border-radius: 10px;
 	padding: 50px;
-	margin-right: 80px;
+	margin-right: 10px;
 }
 
 .timer_display {
@@ -62,7 +36,58 @@ button:hover {
 	align-content: center;
 }
 
+#setTimer {
+	margin-left: 10px;
+}
+
 #txt {
 	font-size: 60px;
-
+	
 }
+
+.minutes {
+	margin-right: 5px;
+}
+
+table, td, th {
+	text-align: center;
+	margin-left: 15px;
+}
+input {
+	width: 95px;
+	margin:0px,20px, 0px, 20px;
+	text-align: right;
+}
+
+
+.triangleUp {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+  
+	border-bottom: 20px solid #87bdd8;
+	font-size: 12px;
+	margin-left:30px;
+	
+}
+.triangleUp:hover {
+	border-bottom-color: #36486b;
+	margin-bottom:2px;
+}
+
+.triangleDown {
+	width: 0; 
+	height: 0; 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	margin-left:30px;
+	border-top: 20px solid #b5e7a0;
+	font-size: 12px;
+	
+}
+.triangleDown:hover {
+	border-top-color:#86af49;
+	margin-top:2px;
+}
+
