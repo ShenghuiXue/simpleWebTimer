@@ -73,6 +73,12 @@
 			var displayedhours=Number(document.getElementById('hour').innerHTML) ;
 			// calulate total time in seconds
 			var totalTimeInSec=60*60*displayedhours+60*displayedMin+displayedSec;
+			
+			if (document.getElementById('hour').innerHTML.charAt(0)==="-") {
+				return totalTimeInSec*-1;
+			}
+			
+			
 			return totalTimeInSec;
 		}
 
@@ -111,27 +117,42 @@
 			document.getElementById('hour').innerHTML="00";
 		}
 
-		function countdown () {
+		// a global var to allow timer countdown function stop
+		var TimerRuningControl = 1;
+		// a global varible to track if start botton has been clicked
+		// in another word, to track if countDown function is running or not
+		var startBottonOn= false;
+		function countDown () {
+			if (TimerRuningControl ===0) return;
+
 			timeDisplay(getTotaltime ()-1);
-			setTimeout(countdown, 1000);
+			setTimeout(countDown, 1000);
 		}
 		
 		// when click invoke this function to start timmer
 		 function startTimerFun(x) { 
 		 	switch (x) {
 		 		case 0:
+		 			if (!startBottonOn) {
+		 				TimerRuningControl =1;
+		 				startBottonOn=true;
+		 			countDown ();
+		 			}
 		 			
-		 				countdown();
 		 						
 		 			
 		 			
 		 			break;
 		 		case 1:
-		 			//
+		 			//document.getElementById("test1").innerHTML=document.getElementById('hour').innerHTML;
+		 			TimerRuningControl=0;
+		 			startBottonOn=false;
 		 			break;
 		 		case 2:
 		 			//
 		 			clearTime();
+		 			TimerRuningControl=0;
+		 			startBottonOn=false;
 		 			break;
 		 		default:
 		 			// do nothing 
