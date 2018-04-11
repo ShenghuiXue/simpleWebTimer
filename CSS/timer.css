@@ -3,11 +3,16 @@ button {
 	border-radius: 5px;
 	background-color: #87CEFA;
 	border-color: #008080;
+	transition: 0.5s;
 	
 }
 
 button:hover {
 	background-color: #1E90FF;
+	padding-right:  8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 8px;
 }
 
 .main_container {
@@ -27,13 +32,34 @@ button:hover {
 	margin: 30px;
 	background: radial-gradient( #FFFFFF, #ADD8E6) repeat;
 	border-radius: 10px;
-	padding: 50px;
+	padding-top: 80px;
+	padding-right: 30px;
+	padding-left: 30px;
 	margin-right: 10px;
+	transition: 1s;
+	opacity: 0.8;
+}
+.left_container:hover {
+	margin:25px;
+	margin-right: 5px;
+	opacity: 1;
+	color: #FF8C00;
 }
 
 .timer_display {
 	font-size: 70px;
 	align-content: center;
+	transition: 1s;
+}
+
+#hour, #minutes, #seconds {
+	transition: 1s;
+}
+
+#hour:hover, #minutes:hover, #seconds:hover {
+	font-size: 80px;
+	color: #FF8C00;
+	
 }
 
 #setTimer {
@@ -101,4 +127,9 @@ h5 {
 }
 #startButton:hover {
 	background-color: #FF4c4c;
+}
+
+.notice_txt:hover {
+	font-style: Comic Sans MS, Comic Sans, cursive;
+	color: #0000F0;
 }
