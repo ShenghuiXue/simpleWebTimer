@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>便捷计时器</title>
+	<link rel="icon" type="image/png" href="./img/bear.png">
+	<link rel="stylesheet" type="text/css" href="./CSS/main.css">
+	<link rel="stylesheet" type="text/css" href="./CSS/timer.css">
+	<script src = "./js/timer.js"> </script>
+
+	
+
+</head>
+<body onload="startTime()">
+	<div class="header">
+		<h1 class= "notice_txt"> 便捷计时器</h1>
+		
+	</div>
+
+	<div class="main_container"> 
+		<div class = "left_container">
+		<p> 本地时间:  </p>
+
+		<div id="txt"></div>
+
+	</div>
+		<p class= "notice_txt">计时器: </p>
+		<p> 系统预设时间为4分钟，点击 <b>开始/继续</b> 按钮开始计时: </p>
+		
+		
+
+		<table class= "timer_display">
+			<tr>
+				<th class="sign"> <div class="triangleUp" onclick="hourUp()" ></div></th>
+				<th></th>
+				<th class="sign"> <div class="triangleUp" onclick="minUp()"></div></th>
+				<th></th>
+				<th class="sign"> <div class="triangleUp" onclick="secUp()"></div></th>
+			</tr>
+			<tr>
+				<td  id="hour">00</td>
+				<td>: </td>
+				<td id= "minutes">04</td>
+				<td >: </td>
+				<td id="seconds">00</td>
+			</tr>
+			<tr>
+				<td class="sign"> <div class="triangleDown" onclick="hourDown()"></div></td>
+				<td></td>
+				<td class="sign"> <div class="triangleDown" onclick="minDown()"></div></td>
+				<td></td>
+				<td class="sign"> <div class="triangleDown" onclick="secDown()"></div></td>
+			</tr>
+		</table>
+		<p class= "notice_txt">点击 <b>开始/继续</b> 按钮开始计时：</p>
+		<button id= "startButton" onclick="startTimerFun(0)">开始/继续</button>
+		<button onclick="startTimerFun(1)">暂停</button>
+		<button onclick="startTimerFun(2)">清零</button>
+		<br>
+		<br>
+
+		<p class= "notice_txt"> 也可以在下面设置时间，点击<a>设置时间</a>，最后点击 <b>开始/继续</b> 按钮开始计时.</p>
+
+
+		<table>
+			<tr>
+				<td>时</td><td class="minutes">分</td><td>秒</td>
+			</tr>
+
+			<tr>
+				<td><input id="setHour" type="number"  step="1" pattern="\d+" value="00" ></td>
+				<td><input id="setMin" type="number" min="0" max="59" step="1" pattern="\d+" value="04"></td>
+				<td><input id="setSec" type="number" min="0" max="59" step="1" pattern="\d+" value="00"></td>
+			</tr>
+			<tr>
+				<td><button id="setTimer" onclick="setTimer()"> 设置时间 </button></td>
+				<td id="warning"> </td>
+			</tr>
+			
+			
+
+		</table>
+	</div>
+<a href="https://www.accuweather.com/en/us/new-york-ny/10007/weather-forecast/349727" class="aw-widget-legal">
+<!--
+By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+-->
+</a><div id="awcc1523463279126" class="aw-widget-current"  data-locationkey="" data-unit="c" data-language="en-us" data-useip="true" data-uid="awcc1523463279126"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+	
+	<div class="foot"> <h5> Develpoed by Shenghui Xue (David) </h5> 
+	<h6> -- The performance of this timer maybe affected by the performance of your system and browser. </h6>
+		</div>
+	
+</body>
+</html>
+
+	
