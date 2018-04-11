@@ -91,3 +91,14 @@ input {
 	margin-top:2px;
 }
 
+h5 {
+	text-align: right;
+	padding-right: 30px;
+}
+
+#startButton {
+	background-color: #c94c4c;
+}
+#startButton:hover {
+	background-color: #FF4c4c;
+}

@@ -13,7 +13,8 @@
 </head>
 <body onload="startTime()">
 	<div class="header">
-		<h1> Simple Online Timer</h1>
+		<h1> Simple Timer</h1>
+		<h5> -- The performance of this timer maybe affected by the performance of your system. </h6>
 	</div>
 
 	<div class="main_container"> 
@@ -68,7 +69,7 @@
 			</tr>
 		</table>
 		<p>Click the button to start the timmer.</p>
-		<button onclick="startTimerFun(0)">Start/Continue</button>
+		<button id= "startButton" onclick="startTimerFun(0)">Start/Continue</button>
 		<button onclick="startTimerFun(1)">Pause</button>
 		<button onclick="startTimerFun(2)">Reset</button>
 		
